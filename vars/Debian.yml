@@ -6,10 +6,4 @@ nomad_os_packages:
   - git
   - libcgroup1
   - unzip
-  - "{% if ( ansible_distribution  == 'Ubuntu' and ansible_distribution_version is version('19', '<') ) or \
-      ( ansible_distribution  == 'Debian' and ansible_distribution_version is version('11', '<') ) \
-    %}\
-      cgroup-bin\
-    {% else %}\
-      cgroup-tools\
-    {% endif %}"
+  - cgroup-tools

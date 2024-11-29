@@ -220,6 +220,6 @@ nomad_cni_zip_url: "{{ nomad_cni_url }}/{{ nomad_cni_pkg }}"
 nomad_cni_checksum_file_url: "{{ nomad_cni_zip_url }}.sha256"
 
 nomad_consul_cni_version: "{{ lookup('env', 'NOMAD_CONSUL_CNI_VERSION') | default('1.4.2', true) }}"
+nomad_consul_cni_pkg: consul-cni_{{ nomad_consul_cni_version }}_linux_{{ nomad_architecture }}.zip
 nomad_consul_cni_zip_url: https://releases.hashicorp.com/consul-cni/{{ nomad_consul_cni_version }}/consul-cni_{{ nomad_consul_cni_version }}_linux_{{ nomad_architecture }}.zip
 nomad_consul_cni_checksum_url: https://releases.hashicorp.com/consul-cni/{{ nomad_consul_cni_version }}/consul-cni_{{ nomad_consul_cni_version }}_SHA256SUMS
-nomad_consul_cni_zip_pkg: consul-cni-{{ nomad_architecture }}-v{{ nomad_consul_cni_version }}.zip

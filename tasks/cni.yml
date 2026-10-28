@@ -18,6 +18,7 @@
     timeout: "42"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Download Nomad consul-cni
@@ -29,6 +30,7 @@
     timeout: "42"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Create Temporary Directory for Extraction
@@ -48,6 +50,7 @@
     creates: "{{ install_temp.path }}/bridge"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Unarchive Nomad Consul CNI
@@ -57,6 +60,7 @@
     creates: "{{ install_temp.path }}/consul-cni"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Install Nomad CNI

@@ -32,6 +32,7 @@
   become: false
   run_once: true
   tags: installation
+  check_mode: false
   when: not nomad_checksum.stat.exists
   delegate_to: 127.0.0.1
 
@@ -63,6 +64,7 @@
     mode: "0644"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
   when: not nomad_package.stat.exists
 
@@ -83,6 +85,7 @@
     creates: "{{ install_temp.path }}/nomad"
   become: false
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Install Nomad

@@ -38,6 +38,7 @@
   become: false
   register: install_temp
   tags: installation
+  check_mode: false
   delegate_to: 127.0.0.1
 
 - name: Unarchive Nomad CNI
@@ -76,4 +77,6 @@
     state: absent
   become: false
   tags: installation
+  check_mode: false
+  when: install_temp is defined and install_temp.path is defined
   delegate_to: 127.0.0.1
